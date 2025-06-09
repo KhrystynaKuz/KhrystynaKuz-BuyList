@@ -6,6 +6,7 @@
   <meta name="description" content="Кошик покупок">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="main.css" />
+  <script src="script.js"></script> 
 </head>
 <body>
   <div class="container">
@@ -16,12 +17,15 @@
 		</div>
 		<hr>
 		<div class="product-row bought">
-		  <span class="product-name-crossed">Помідори</span>
+		  <input class="product-name-input bought" value="Помідори" readonly/>
 		  <div class="product-counter">
+			<button class="minus" data-tooltip="Зменшити">−</button>
 			<span class="count">2</span>
+			<button class="plus" data-tooltip="Збільшити">+</button>
 		  </div>
 		  <div class="product-actions">
 			<button class="status-btn" data-tooltip="Позначити як не куплене">Не куплено</button>
+			<button class="delete" data-tooltip="Видалити">×</button>
 		  </div>
 		</div>
 		<hr>
@@ -41,12 +45,12 @@
 		<div class="product-row">
 		  <input class="product-name-input" value="Сир" readonly />
 		  <div class="product-counter">
-			<button class="minus-stop" data-tooltip="Зменшити">−</button>
+			<button class="minus" data-tooltip="Зменшити" disabled>−</button>
 			<span class="count">1</span>
 			<button class="plus" data-tooltip="Збільшити">+</button>
 		  </div>
 		  <div class="product-actions">
-			<button class="status-btn" data-tooltip="Позначити як куплене">Куплено</button>
+			<button class="status-btn" id="bought" data-tooltip="Позначити як куплене">Куплено</button>
 			<button class="delete" data-tooltip="Видалити">×</button>
 		  </div>
 		</div>
@@ -55,15 +59,16 @@
 	  <div class="second-column">
 		<h2>Залишилося</h2>
 		<hr>
-		<div class="badge-list">
+		<div class="badge-list" id="not-bought-list">
 		  <span class="tag">Печиво <span class="tag-count">2</span></span>
 		  <span class="tag">Сир <span class="tag-count">1</span></span>
 		</div>
 		<hr>
 		<h2>Куплено</h2>
 		<hr>
-		<div class="badge-list">
-		  <span class="tag crossed">Помідори <span class="tag-count">2</span></span>
+		<div class="badge-list" id="bought-list">
+		  <span class="tag-crossed">Помідори 
+		  <span class="tag-count-crossed">2</span></span>
 		</div>
 	  </div>
   </div>

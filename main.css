@@ -113,9 +113,6 @@ body {
 	font-weight: bold;
 	cursor: pointer;
 	white-space: nowrap;
-	display: flex;
-	align-items: center;
-	justify-content: center; 
 	box-shadow: -1px -4px rgba(29, 14, 195, 0.356) inset;
   }
   
@@ -132,13 +129,11 @@ body {
 	text-align: left;
 	font-size: 18px;
 }
-  
-  .product-name-crossed {
-	justify-self: start;
-	width: 33.3%;
-	font-size: 18px;
-	text-decoration: line-through;
-	color: gray;
+
+  .product-row.bought .product-counter .plus,
+  .product-row.bought .product-counter .minus,
+  .product-row.bought .product-actions .delete {
+  	display: none;
   }
   
   .product-name-input {
@@ -148,6 +143,14 @@ body {
 	border: none;
 	background: transparent;
   }
+
+  .product-row.bought .product-name-input {
+	border: none;
+	background: transparent;
+	color: gray;
+	text-decoration: line-through;
+	pointer-events: none; 
+}
 
   .product-counter {
 	display: flex;
@@ -191,7 +194,7 @@ body {
 	box-shadow: -1px -3px rgba(84, 0, 0, 0.312) inset;
   }
 
-  .minus-stop {
+  button:disabled {
 	background-color: red;
 	box-shadow: -1px -3px rgba(101, 36, 36, 0.312) inset;
 	opacity: 50%;
@@ -229,17 +232,27 @@ body {
 	margin: 10px 0;
   }
   
-  .tag {
+  .tag, .tag-crossed {
 	background-color: rgb(229, 229, 229);;
 	padding: 5px 10px;
 	border-radius: 10px;  
   }
+
+  .tag-crossed {
+	text-decoration: line-through;
+	color: gray;
+  }
   
-  .tag-count {
+  .tag-count, .tag-count-crossed {
 	background: orange;
 	border-radius: 50%;
 	padding: 2px 6px;
 	margin-left: 5px;
+	color: white;
+  }
+
+  .tag-count-crossed {
+	text-decoration: line-through;
 	color: white;
   }
   
@@ -252,7 +265,6 @@ body {
 	height: 30px;
 	background-color: #6d1aa8; 
 	color: white;
-	font-family: sans-serif ;
 	font-size: 22px;
 	padding: 10px 20px;
 	border-radius: 10px 10px 0 0;
