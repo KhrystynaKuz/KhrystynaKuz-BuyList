@@ -216,7 +216,6 @@ document.addEventListener("DOMContentLoaded", () => {
       
         actions.appendChild(buyBtn);
         actions.appendChild(deleteBtn);
-      
         productRow.appendChild(nameInput);
         productRow.appendChild(counter);
         productRow.appendChild(actions);
